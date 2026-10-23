@@ -1,0 +1,6 @@
+fastapi>=0.110,<1
+uvicorn[standard]>=0.29,<1
+pydantic>=2.6,<3
+PyJWT>=2.8,<3
+httpx>=0.27,<1      # only needed to run the API tests
+pytest>=8,<9        # only needed to run the API tests

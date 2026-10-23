@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="studio">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NagarSetu · A bridge between citizens and city services</title>
+<meta name="description" content="AI-assisted civic service desk for Chandigarh. Report an issue, get it routed and assigned, and track it until it is resolved. Hackathon prototype.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Wix+Madefor+Display:wght@400;500;600&family=Wix+Madefor+Text:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600&family=Noto+Sans+Gurmukhi:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<script>try{var m=localStorage.getItem("ns-mode")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");document.documentElement.dataset.mode=m}catch(e){}</script>
+</head>
+<body data-view="landing">
+<div class="note">NagarSetu is a hackathon prototype, not an official Chandigarh government service, and not an emergency service. Demo tickets are simulated.</div>
+<header><div class="hd">
+<button class="logo" id="home" aria-label="NagarSetu, back to landing page"><svg viewBox="0 0 24 30" aria-hidden="true"><path d="M12 29C5 20 1 15 1 10a11 11 0 0 1 22 0c0 5-4 10-11 19z" fill="#6FB942"/><circle cx="12" cy="10" r="6.5" fill="#fff"/><circle cx="12" cy="7.6" r="1.8" fill="#0E5C9A"/><path d="M8.5 13a3.5 3 0 0 1 7 0z" fill="#0E5C9A"/></svg>NagarSetu</button>
+<nav aria-label="Primary"><a href="#issues">Issues solved</a><a href="#howto">How to use</a><a href="#features">Features</a><a href="#faq">FAQ</a></nav>
+<div class="hr"><div class="sw" id="sw" role="group" aria-label="Palette"></div><select id="lang" aria-label="Language"><option value="en">English</option><option value="hi">हिन्दी</option><option value="pa">ਪੰਜਾਬੀ</option></select><button class="btn sm" id="mode" aria-pressed="false">🌙 Dark</button><span id="who" class="pill info" hidden></span><button class="btn sm" id="so" hidden>Sign out</button><button class="link" id="lg" data-start>Log in</button><button class="go" data-start>Try the demo</button></div>
+</div></header>
+
+<main id="landing">
+<div id="hero"><canvas id="bg" aria-hidden="true"></canvas><div class="wrap">
+<div class="brandline"><svg width="26" height="32" viewBox="0 0 24 30" aria-hidden="true"><path d="M12 29C5 20 1 15 1 10a11 11 0 0 1 22 0c0 5-4 10-11 19z" fill="#6FB942"/><circle cx="12" cy="10" r="6.5" fill="#fff"/><circle cx="12" cy="7.6" r="1.8" fill="#0E5C9A"/><path d="M8.5 13a3.5 3 0 0 1 7 0z" fill="#0E5C9A"/></svg>NagarSetu <span>Civic service desk</span></div>
+<h1>A bridge between citizens and city services</h1>
+<p class="lead">Report an issue, get it routed to the right team and staff member, and follow it on a live deadline clock until it is resolved.</p>
+<div class="cta"><button class="btn p" data-start>Try the demo</button><a class="link" href="#howto" style="font-size:20px">See how to use it →</a></div>
+</div>
+<div id="showcase"><canvas id="c" aria-label="3D preview of NagarSetu screens"></canvas></div>
+</div>
+
+<section class="l" id="issues"><div class="wrap">
+<h2>Three everyday problems, one place to report them</h2>
+<p class="sub">The prototype starts with three categories, to be confirmed with the organisers. Tilt the cards to look around.</p>
+<div class="grid">
+<div class="rv" style="--i:0"><div class="t3 c1"><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><rect x="14" y="20" width="36" height="38" rx="5" fill="#0A0A0A"/><rect x="10" y="12" width="44" height="8" rx="4" fill="#0A0A0A"/><rect x="26" y="5" width="12" height="7" rx="3" fill="#0A0A0A"/><path d="M24 28v22M32 28v22M40 28v22" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg><h3>Uncollected waste</h3><p>Bins not emptied or litter piling up. Goes to the sanitation team.</p></div></div>
+<div class="rv" style="--i:1"><div class="t3 c3"><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M18 6h28l8 20H10z" fill="#0A0A0A"/><rect x="29" y="26" width="6" height="32" fill="#0A0A0A"/><rect x="18" y="56" width="28" height="5" rx="2" fill="#0A0A0A"/><path d="M20 32l-6 9M44 32l6 9M32 32v11" stroke="#0A0A0A" stroke-width="3" stroke-linecap="round"/></svg><h3>Broken streetlights</h3><p>Dark stretches and failed lamps. Goes to the electrical team.</p></div></div>
+<div class="rv" style="--i:2"><div class="t3 c4"><svg class="ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M8 58L26 6h12l18 52z" fill="#0A0A0A"/><path d="M32 12v8M32 28v8M32 44v8" stroke="#fff" stroke-width="3" stroke-linecap="round"/><ellipse cx="45" cy="47" rx="8" ry="4.5" fill="#AEE7FF"/></svg><h3>Potholes and road damage</h3><p>Cracks, pits and broken edges. Goes to the roads team.</p></div></div>
+</div>
+<h2 style="margin-top:80px;font-size:clamp(26px,3.4vw,40px)">What it fixes behind the scenes</h2>
+<div class="grid">
+<div class="card rv" style="--i:0"><h3>Not knowing where to report</h3><p>One guided form replaces guessing which office to call.</p></div>
+<div class="card rv" style="--i:1"><h3>No receipt or follow-up</h3><p>Every report gets a ticket number and a public timeline.</p></div>
+<div class="card rv" style="--i:2"><h3>Manual routing</h3><p>Department rules send each ticket to a team and a staff member automatically.</p></div>
+<div class="card rv" style="--i:3"><h3>Missed deadlines</h3><p>A live clock runs on every ticket. Late tickets alert a human supervisor.</p></div>
+<div class="card rv" style="--i:4"><h3>Unclear accountability</h3><p>Every status change records who did it and when, in an audit log.</p></div>
+</div>
+</div></section>
+
+<section class="l" id="howto"><div class="wrap">
+<h2>How to use NagarSetu</h2>
+<p class="sub">Pick a role. The four steps are in the order you will do them.</p>
+<div class="tabs" id="htab" role="group" aria-label="Role"></div>
+<div class="grid" id="htu" style="margin-top:28px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))"></div>
+<div class="cta" style="justify-content:flex-start"><button class="btn p" data-start>Try the demo</button></div>
+</div></section>
+
+<section class="l" id="lifecycle"><div class="wrap">
+<h2>How a ticket moves</h2>
+<p class="sub">The same path every time, with a clock that runs on India Standard Time.</p>
+<div class="flow">
+<div class="fb rv" style="--i:0"><b>1. Report</b><span>Resident picks a category, adds details and a location.</span></div>
+<div class="fb rv" style="--i:1"><b>2. Confirm</b><span>Nothing is created until the resident confirms.</span></div>
+<div class="fb rv" style="--i:2"><b>3. Department console</b><span>The ticket lands there at once, with a ticket number like ticket001.</span></div>
+<div class="fb rv" style="--i:3"><b>4. Staff assigned</b><span>The matching team's least busy staff member gets it.</span></div>
+<div class="fb rv" style="--i:4"><b>5. In progress</b><span>Staff update status and add a public note.</span></div>
+<div class="fb rv" style="--i:5"><b>6. Resolved</b><span>The resident sees the result on the timeline.</span></div>
+</div></div></section>
+
+<section class="l" id="features"><div class="wrap">
+<h2>What is inside</h2>
+<p class="sub">Everything below runs in the live dashboard.</p>
+<div class="grid">
+<div class="card"><h3>Real-time IST clock</h3><p>Deadlines count down in hours, minutes and seconds on India Standard Time. A demo fast-forward is optional.</p></div>
+<div class="card"><h3>Automatic assignment</h3><p>Tickets go to the department console and to the least busy staff member for that problem.</p></div>
+<div class="card"><h3>Live location or landmark</h3><p>Share your location, tap the map or type a landmark. The pin must be inside Chandigarh.</p></div>
+<div class="card"><h3>Google map tracking</h3><p>Turn on Google Maps with your own key. Without it, a built-in map and Open in Google Maps links are used.</p></div>
+<div class="card"><h3>Escalation to people</h3><p>Reminder, supervisor and department head alerts. Tickets are never closed or rejected automatically.</p></div>
+<div class="card"><h3>Cited answers</h3><p>The FAQ shows a source card, or says it cannot verify an answer.</p></div>
+<div class="card"><h3>Role-based access</h3><p>Residents, staff and department admins see different screens, and the engine blocks other calls.</p></div>
+<div class="card"><h3>Dark mode and palettes</h3><p>Light or dark, with five palettes. Contrast is checked for the default.</p></div>
+</div></div></section>
+
+<section class="l" id="rules"><div class="wrap">
+<h2>Rules we keep</h2>
+<div class="grid" style="margin-top:30px">
+<div class="card"><h3>AI suggests, people decide</h3><p>AI only proposes a category. Residents edit it. Staff control status.</p></div>
+<div class="card"><h3>Departments set the deadlines</h3><p>AI never invents a team, a deadline or a rule.</p></div>
+<div class="card"><h3>Simulated data</h3><p>All tickets are labelled demo tickets. Nothing is filed with the real city.</p></div>
+<div class="card"><h3>Not an emergency service</h3><p>In an emergency, contact the official emergency services directly.</p></div>
+</div></div></section>
+
+<section class="l" id="impact"><div class="wrap">
+<h2>Targets are proposals, results stay empty until measured</h2>
+<div class="card" style="margin-top:30px"><table><tr><th>Metric</th><th>Proposed target</th><th>Measured</th></tr>
+<tr><td>Category routing</td><td>At least 90% on 30–50 held-out examples</td><td class="e">Not yet measured</td></tr>
+<tr><td>Consent</td><td>Zero tickets without confirmation</td><td class="e">Not yet measured</td></tr>
+<tr><td>Report time</td><td>Familiar report under 60 seconds</td><td class="e">Not yet measured</td></tr>
+<tr><td>SLA engine</td><td>Timers, flags and escalations fire correctly</td><td class="e">Not yet measured</td></tr></table></div>
+</div></section>
+
+<section class="l" id="faq"><div class="wrap">
+<h2>Questions</h2><div style="margin-top:30px;max-width:46em">
+<details><summary>Does it file real Chandigarh complaints?</summary><p>No. It creates labelled demo tickets in the browser. Real filing needs an authorised, tested integration.</p></details>
+<details><summary>Does it resolve complaints faster than government portals?</summary><p>We do not claim that. Speed depends on adoption, staffing and whether authorities cooperate.</p></details>
+<details><summary>How do I track my ticket?</summary><p>Enter the ticket number, such as ticket001, under Track a ticket. Signed-in residents also see a My tickets list.</p></details>
+<details><summary>Is the map from Google?</summary><p>When the site owner adds a Google Maps key, yes. Otherwise a built-in map with Open in Google Maps links is shown.</p></details>
+<details><summary>Which languages are supported?</summary><p>English, Hindi and Punjabi. Translations are first drafts: have fluent speakers review them before real use.</p></details>
+</div></div></section>
+<footer><div class="wrap"><p><b>Claim boundary.</b> NagarSetu is a hackathon proposal and prototype. Demo sign-in accounts are not real authentication, and data resets when the page reloads.</p></div></footer>
+</main>
+
+<main id="app" hidden><div class="wrap">
+<div id="v-auth" hidden><div class="card" style="max-width:520px;margin:20px auto">
+<button class="link" id="back2" style="font-size:15px">← Back to landing page</button>
+<h3 style="font-size:26px;margin-top:12px">Sign in to NagarSetu</h3>
+<div class="tabs" id="atabs" role="group" aria-label="Sign-in type" style="margin:10px 0 14px"></div>
+<div id="af"></div><p class="err" id="ae" role="alert" style="margin:6px 0"></p>
+<button class="btn p" id="go">Sign in</button> <button class="btn" id="rg" hidden>Create account</button>
+<p class="mu" style="font-size:13px"><span id="authnote">Prototype sign-in with demo accounts. A real deployment needs proper authentication.</span></p>
+</div></div>
+
+<div id="dash" hidden>
+<div class="bar"><button class="btn sm" id="back">← Back to landing page</button><span class="demo">Simulated demo tickets</span>
+<div class="clock"><span id="clk" aria-live="off"></span><label for="spd" class="mu">Clock</label><select id="spd"><option value="1" selected>Real time (IST)</option><option value="60">Demo ×60</option><option value="3600">Demo 1 h / s</option><option value="86400">Demo 1 day / s</option><option value="0">Paused</option></select></div></div>
+
+<div id="v-resident" hidden><div class="two">
+<div class="card"><h3>Report an issue</h3><div id="wz"></div></div>
+<div style="display:grid;gap:18px;align-content:start">
+<div class="card"><h3>Track a ticket</h3><input type="text" id="tid" placeholder="ticket001" aria-label="Ticket number"> <button class="btn sm" id="trk" style="margin-top:8px">Track</button><div id="tout" style="margin-top:10px"></div></div>
+<div class="card"><h3>My tickets</h3><div id="mine"></div></div>
+<div class="card"><h3>Ask a question</h3><input type="text" id="q" placeholder="e.g. How long does a report take?" aria-label="Question"> <button class="btn sm" id="ask" style="margin-top:8px">Ask</button><div id="ans" aria-live="polite" style="margin-top:10px"></div></div>
+</div></div>
+<div class="two" style="margin-top:18px"><div class="card"><h3>Public status map</h3><div id="pm"></div><small class="mu">Anonymised. Blue: new. Amber: being worked. Red: needs information. Green: resolved.</small></div>
+<div class="card"><h3>Check access control</h3><p class="mu" style="margin-top:0">Residents cannot open the staff queue or the department console.</p><button class="btn sm" id="try">Try the staff queue as a resident</button></div></div>
+</div>
+
+<div id="v-staff" hidden><div class="three">
+<div class="card"><h3 id="sh">My queue</h3><p class="mu" style="margin:0 0 8px;font-size:14px">Only tickets assigned to you appear here.</p><div style="overflow:auto"><table id="qt"></table></div></div>
+<div class="card" id="det"><p class="mu">Select a ticket to see details.</p></div>
+</div></div>
+
+<div id="v-admin" hidden>
+<div class="card"><h3>Department console · every confirmed ticket arrives here</h3><div style="overflow:auto"><table id="dt"></table></div></div>
+<div class="two" style="margin-top:18px"><div class="card"><h3>Live ticket map</h3><div id="am"></div></div><div style="display:grid;gap:18px;align-content:start"><div class="card"><h3>Staff workload</h3><div id="wl"></div></div><div class="card"><h3>Measured in this prototype session</h3><div id="mt"></div></div></div></div>
+<div class="two" style="margin-top:18px"><div class="card"><h3>Routing and deadlines</h3><div id="rt"></div><small class="mu">Saved rules apply to new tickets. Values are prototype mapping until the department verifies them.</small></div>
+<div class="card"><h3>Audit log</h3><div class="feed" id="au" style="max-height:300px"></div></div></div>
+</div>
+<div class="card" style="margin-top:18px"><h3>Live engine feed</h3><div class="feed" id="fd"></div></div>
+</div></div></main>
+<div id="toast" role="status" hidden></div>
+
+<script src="config.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/hero3d.js"></script>
+<script src="js/herobg.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/chatbot.js"></script>
+</body></html>
